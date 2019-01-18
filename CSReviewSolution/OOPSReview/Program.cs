@@ -72,7 +72,7 @@ namespace OOPSReview
 
                                 //display the round results
                                 Console.WriteLine("Player 1 rolled {0}", theturn.Player1);
-                                Console.WriteLine("Player  rolled {0}", Player2.FaceValue);
+                                Console.WriteLine("Player 2 rolled {0}", Player2.FaceValue);
 
                                 if(Player1.FaceValue > Player2.FaceValue)
                                 {
@@ -129,12 +129,14 @@ namespace OOPSReview
                         case "C":
                             {
                                 //Display the current players' stats
+                                DisplayCurrentPlayerStats(rounds);
                                 break;
                             }
                         case "X":
                             {
                                 //Display the final players' stats
                                 Console.WriteLine("\nThank you for playing.");
+                                DisplayCurrentPlayerStats(rounds);
                                 break;
                             }
                         default:
@@ -153,15 +155,29 @@ namespace OOPSReview
             } while (menuChoice.ToUpper() != "X");
         }//eomain
 
-        public static void DisplayCurrentPlayerStats()
+        public static void DisplayCurrentPlayerStats(List<Turn> Rounds)
         {
             
             int wins1 = 0;
             int wins2 = 0;
             int draws = 0;
 
-            //travser the List<Turn> to calculate wins, losses, and draws
-           
+            //travser the List<Turn> to calculate wins for each player, losses, and draws
+            foreach(Turn item in Rounds)
+            {
+                if(item.Player1 > item.Player2)
+                {
+                    wins1 = wins1 + 1;
+                }
+                else if (item.Player1 < item.Player2)
+                {
+                    wins2 += 1;
+                }
+                else
+                {
+                    draws++; 
+                }
+            }
 
             //display the results
             Console.WriteLine("\n Total Rounds: " + (wins1 + wins2 + draws).ToString());
