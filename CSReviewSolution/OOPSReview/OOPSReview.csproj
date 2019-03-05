@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D66B018-BF83-48ED-AB8C-C5E6739BF260}</ProjectGuid>
+    <ProjectGuid>{051B1D76-71B4-4FEF-B8A7-DCA228248883}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OOPSReview</RootNamespace>
-    <AssemblyName>OOPSReview</AssemblyName>
+    <RootNamespace>OOPsReview</RootNamespace>
+    <AssemblyName>OOPsReview</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

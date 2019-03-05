@@ -5,13 +5,13 @@
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/bootstrap.js"></script>
-    @RenderSection("head", required: false) 
+    @RenderSection("head", required: false)
 </head>
 <body>
-    <div class="container-fluid"> 
+    <div class="container-fluid">
         <!-- this is the menu placeholder-->
         @RenderPage("~/_Menu.cshtml")
-        <br /><br />
+        <br/><br/>
         <div class="jumbotron">
             @RenderSection("banner")
         </div>

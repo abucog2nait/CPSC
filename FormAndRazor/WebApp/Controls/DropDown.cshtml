@@ -1,34 +1,33 @@
 ﻿@{
-    Layout = "~/_Layout1.cshtml";
-    Page.Title = "DropDown"; // This is C# world!
+    Layout = "~/_Layout.cshtml";
+    Page.Title = "Dropdown";
+
     var selection = Request.Form["pageselection"];
 }
 @section head{
+
     <link href="~/Content/MyCustomStyles.css" rel="stylesheet" />
 }
-@section banner { <!--this is HTML world!-->
-    <h1> Drop down for Razor Form Samples</h1>
+
+@section banner{
+    <h1>DropDown (select) for Razor Form Samples</h1>
 }
 
 @if (IsPost)
 {
-    //no button decision (only one button)
+    //no button descision (only one button)
     //validation
-    //the validtion in this sample will be done inside the switch 
-    //if a page was not selected then the swith default will select the ... option
+    //the validation in this sample will be done inside the switch
+    //if a page was not selected then the switch default will handle
+    //     the select ... option
     switch(selection.ToUpper())
     {
-        case"TEXTBOXES":
+        case "TEXTBOXES":
             {
-                //the object class for data is going out is Response
-                //the method i direct yourself to another page is .Redirect(page)
-                //we will use relative addressing to ger another page
+                //the object class for data going out is Response
+                //the method to direct yourself to another page is .Redirect(page)
+                //we will use relative addressing to get to another page
                 Response.Redirect("TextBoxes.cshtml");
-                break;
-            }
-        case "CHECKBOXES":
-            {
-                Response.Redirect("CheckBoxes.cshtml");
                 break;
             }
         case "RADIOBUTTONS":
@@ -36,32 +35,43 @@
                 Response.Redirect("RadioButtons.cshtml");
                 break;
             }
-        default:
+        case "CHECKBOXES":
             {
-                <p>Please select a page</p>
+                Response.Redirect("CheckBoxes.cshtml");
                 break;
             }
-
+        default:
+            {
+                <p><span style="color:firebrick"><strong>
+                     Select the sample you wish to view.</strong></span></p>
+                break;
+            }
     }
 }
-<form  id="theform" method="post">
+
+<form id="theform" method="post">
     <div class="row">
-        <div class="col-ml-offset-4">
-            <label for="pageselection">Select control examples</label>
+        <div class="col-md-offset-4">
+            <label for="pageselection">Select control example:</label>
             &nbsp;&nbsp;
             <select id="pageselection" name="pageselection">
-                <option value="">Select...</option>
+                <option value="">select ...</option>
                 <option value="TextBoxes">TextBoxes</option>
-                <option value="RadioButtons">RadioButtons</option
+                <option value="RadioButtons">RadioButtons</option>
                 <option value="CheckBoxes">CheckBoxes</option>
             </select>
-            &nbsp;
-            <button type="submit" id="formbutton" name="formbutton" value="submit" class="btn btn-primary">Go to...</button>
+            &nbsp;&nbsp;
+            <button type="submit" id="formbutton" name="formbutton"
+                    value="Submit" class="btn btn-primary">
+                Go To ...
+            </button>
         </div>
     </div>
 </form>
-
-@section footer {
-    <footer> CPSC1517 Nait, all rights reserved</footer>
+@section footer{
+    &copy; CPSC1517 Nait, all rights reservered
 }
+
+
+
 

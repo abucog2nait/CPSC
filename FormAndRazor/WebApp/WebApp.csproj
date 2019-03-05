@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{24E05939-ADD1-4170-9602-F34AA6B03069}</ProjectGuid>
+    <ProjectGuid>{6EEE8890-E55F-4AE6-832B-474C9DD06941}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -88,6 +88,9 @@
     <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
     </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.7\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -110,7 +113,14 @@
     <Content Include="Controls\RadioButtons.cshtml" />
     <Content Include="Controls\CheckBoxes.cshtml" />
     <Content Include="Controls\DropDown.cshtml" />
-    <Content Include="DBPages\Single Quary.cshtml" />
+    <Content Include="DBPages\SingleQuery.cshtml" />
+    <Content Include="DBPages\MultiRecordQuery.cshtml" />
+    <Content Include="DBPages\MultiRecordWebGrid.cshtml" />
+    <Content Include="DBPages\WebGridDestination.cshtml" />
+    <Content Include="DBPages\BootstrapTextAlignment.cshtml" />
+    <Content Include="DBPages\Insert.cshtml" />
+    <Content Include="DBPages\ProductEdit.cshtml" />
+    <Content Include="DBPages\ProductSearch.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -118,7 +128,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Web.config" />
     <Content Include="_Menu.cshtml" />
-    <Content Include="WebConnnectionStrings.config" />
+    <Content Include="WebConnectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,9 +144,8 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="_Layout1.cshtml" />
+    <Content Include="_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -150,9 +159,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50643</DevelopmentServerPort>
+          <DevelopmentServerPort>52936</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50643/</IISUrl>
+          <IISUrl>http://localhost:52936/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
