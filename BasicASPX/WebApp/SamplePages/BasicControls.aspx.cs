@@ -19,9 +19,8 @@ namespace WebApp.SamplePages
             // this page is processed
             //this event method is executed BEFORE ANY EVENT method is processed
 
-            //Clear out all old messages 
+            //clear out all old message
             OutputMessage.Text = "";
-
 
             //this page is an excellent place to do page initialization
             //  of your controls.
@@ -71,35 +70,37 @@ namespace WebApp.SamplePages
 
         protected void SubMitButton_Click(object sender, EventArgs e)
         {
-            //This method is executed when the submit button is submit is pressed 
-            //This method is concered with the actions needed for the dubmit button 
+            //this method is executed when the submit button is pressed
+            //this method is concerned with the actions needed for the
+            //    submit button
 
+            //to access the data of a control, you use the appropriate
+            //    control (object) property (get, set) and access technique
 
-            //To access the data of a control, you use the appropriate control (object) property (get. set) and access technique
+            //for TextBox, Label, Literal use .Text
+            //for a list (DropDownList, RadioButtonlist) use one of
+            //   .SelectedIndex  the phyiscal location of the item in the list
+            //   .SelectedValue  the associated data value of the item in the list
+            //   .SelectedItem   the associated data display text of the item in the list
+            //for boolean controls (RadioButton, CheckBox) use .Checked
 
-            //For Textbox, Label, Literal use .Text
-            //for a list (DropDownList, RadioButtonList) use one of
-            //  .SelectedIndex  the physical location of the item in the list 
-            //  .SelectedItem   the associated data display text of the item in the list
-            //for the boolean controls (RadioButton, Checkbox ) use .Checked
-            //Most controls will use strings except for boolean controls
-
+            //most controls will use strings except for boolean controls
 
             string submitchoice = TextBoxNumericChoice.Text;
 
-            //Sample validation 
-            if(string.IsNullOrEmpty(submitchoice))
+            //sample validation
+            if (string.IsNullOrEmpty(submitchoice))
             {
-                OutputMessage.Text = "Enter a course choice of 1-4";
+                OutputMessage.Text = "Enter a course choice of 1 to 4";
             }
             else
             {
-                //Set the RadioButtonList using the entered data value
-                //property: .SelectedValue 
+                //set the RadioButtonList using the entered data value
+                //property: .SelectedValue
                 RadioButtonListChoice.SelectedValue = submitchoice;
 
-                //Set the checkbox to on if the choice was a programming language
-                if(submitchoice.Equals("2") || submitchoice.Equals("3"))
+                //set the checkbox to on if the choice was a programing language
+                if (submitchoice.Equals("2") || submitchoice.Equals("3"))
                 {
                     CheckBoxChoice.Checked = true;
                 }
@@ -107,17 +108,44 @@ namespace WebApp.SamplePages
                 {
                     CheckBoxChoice.Checked = false;
                 }
+
                 //position in the dropdownlist
                 //use the entered data value to position
                 //property: .SelectedValue
                 CollectionList.SelectedValue = submitchoice;
 
-                //demonstate the 3 different access technique for a list 
+                //demonstrate the 3 different access techniques for a list
                 //output will be to a label (appearance will be read only)
                 DisplayReadOnly.Text = CollectionList.SelectedItem.Text
                     + " at index " + CollectionList.SelectedIndex
                     + " has a value of " + CollectionList.SelectedValue;
-            }//end of if
-        }//end of method submit choice
-    }//end of class form class
+
+            }//eof
+        }//eom submitchoice
+
+        protected void ListSubmit_Click(object sender, EventArgs e)
+        {
+            if (CollectionList.SelectedIndex == 0)
+            {
+                OutputMessage.Text = "Select a course to view";
+            }
+            else
+            {
+                string submitchoice = CollectionList.SelectedValue;
+                TextBoxNumericChoice.Text = submitchoice;
+                RadioButtonListChoice.SelectedValue = submitchoice;
+                if (submitchoice.Equals("2") || submitchoice.Equals("3"))
+                {
+                    CheckBoxChoice.Checked = true;
+                }
+                else
+                {
+                    CheckBoxChoice.Checked = false;
+                }
+                DisplayReadOnly.Text = CollectionList.SelectedItem.Text
+                   + " at index " + CollectionList.SelectedIndex
+                   + " has a value of " + CollectionList.SelectedValue;
+            }
+        }
+    }//eoc form class
 }
