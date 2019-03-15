@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A9784785-7A32-4091-AF58-CE909B6F9912}</ProjectGuid>
+    <ProjectGuid>{2F9860EA-8367-4E56-8156-2CBB4FECB2A6}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -189,6 +195,7 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="WebConntectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -242,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SamplePages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -255,13 +263,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NorthwindSystem\NorthWindSystem.csproj">
-      <Project>{8fdd3ed1-498e-4318-a9df-43edb9a23c70}</Project>
-      <Name>NorthWindSystem</Name>
+    <ProjectReference Include="..\NorthwindSystem.Data\NorthwindSystem.Data.csproj">
+      <Project>{7c495435-7d05-4da1-a7f0-f6939d2e4d34}</Project>
+      <Name>NorthwindSystem.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NorthWindSytem.Data\NorthWindSytem.Data.csproj">
-      <Project>{88b93db2-c4d9-423b-a057-a567673fbfbb}</Project>
-      <Name>NorthWindSytem.Data</Name>
+    <ProjectReference Include="..\NorthwindSystem\NorthwindSystem.csproj">
+      <Project>{6fa708c0-4497-436c-8109-13205066f0f0}</Project>
+      <Name>NorthwindSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -277,9 +285,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51678</DevelopmentServerPort>
+          <DevelopmentServerPort>61060</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51678/</IISUrl>
+          <IISUrl>http://localhost:61060/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
